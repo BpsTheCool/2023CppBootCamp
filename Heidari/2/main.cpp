@@ -45,7 +45,7 @@ public:
     }
 
 };
-size_t MyIntPtr::count = 0;
+int MyIntPtr::count = 0;
 
 int main(int argc, char *argv[])
 {
