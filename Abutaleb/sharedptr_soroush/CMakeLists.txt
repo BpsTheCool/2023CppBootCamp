@@ -8,8 +8,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(shared-ptr main.cpp
                             Sharedptr.cpp
                             Sharedptr.h
-                            Test.h
-                            Test.cpp
                         )
 
 install(TARGETS shared-ptr

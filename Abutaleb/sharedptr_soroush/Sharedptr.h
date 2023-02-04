@@ -5,7 +5,8 @@
 class Sharedptr
 {
     int *m_a;
-    static inline int m_count=0;
+    //Sharedptr m_ptr;
+    int* m_count;
 public:
     Sharedptr(int *a);
     Sharedptr(Sharedptr &a);
