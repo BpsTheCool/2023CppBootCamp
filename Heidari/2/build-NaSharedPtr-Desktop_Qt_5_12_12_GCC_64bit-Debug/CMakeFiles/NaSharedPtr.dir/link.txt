@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/NaSharedPtr.dir/NaSharedPtr_autogen/mocs_compilation.cpp.o CMakeFiles/NaSharedPtr.dir/main.cpp.o CMakeFiles/NaSharedPtr.dir/intshareptr.cpp.o -o NaSharedPtr  -Wl,-rpath,/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib /home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 
