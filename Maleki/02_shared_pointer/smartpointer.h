@@ -5,7 +5,7 @@
 
 class shared_pointer{
     int *m_object;
-    std::set<shared_pointer*> *m_set;
+    int *m_counter;
 public:
     shared_pointer();
     shared_pointer(int* new_ptr);
@@ -14,9 +14,11 @@ public:
     void operator = (int* new_ptr);
     void operator = (shared_pointer &copy);
     void operator = (shared_pointer &&moved);
+    void reset(int* new_ptr);
     int& operator *();
-    int* getobject();
-    std::set<shared_pointer*>* getSet();
+    int* getObject();
+    int* getCounter();
+    void setNull();
     int countPointers();
     ~shared_pointer();
 };
