@@ -8,10 +8,11 @@
 
 enum class TypeDevice
 {
-    Hdd,
-    Ssd,
-    Flashmemory,
-    HardExternal,
+    null=0,
+    Hdd=1,
+    Ssd=2,
+    Flashmemory=3,
+    HardExternal=4,
 };
 
 

@@ -19,7 +19,8 @@ std::string user()
 {
     std::cerr << std::endl << "************************************************"<<std::endl;
     std::cerr << "command: ";
-    std::cerr << "adddevice/insertdevice";
+    std::cerr << "adddevice/insertdevice ";
+    std::cerr << "removedevice/ejectdevice ";
     std::string s;
     std::cerr << std::endl;
     std::cin >> s;
@@ -28,32 +29,43 @@ std::string user()
 
 void switchonTypeDevice(Filemanger &f)
 {
+    loop:
     std::cerr << "please write the type of your Device" << std::endl;
     std::string st;
     std::cin>>st;
     TypeDevice sw = Device::mymap(st);
-    std::cerr << "please write the name and size of your Device" << std::endl;
-    std::string name;
-    int size;
-    std::cin >> name >>size ;
-
-    switch (sw)
+    if(sw != TypeDevice::null)
     {
-        case TypeDevice::Hdd :
+        std::cerr << "please write the name and size of your Device" << std::endl;
+        std::string name;
+        int size;
+        std::cin >> name >>size ;
+
+        switch (sw)
         {
-            f.insertdevice(std::make_shared<Hdd>(name,size,sw));
-            break;
+            case TypeDevice::Hdd :
+            {
+                f.insertdevice(std::make_shared<Hdd>(name,size,sw));
+                break;
+            }
+            case TypeDevice::Ssd :
+            {
+                f.insertdevice(std::make_shared<Ssd>(name,size,sw));
+                break;
+            }
         }
-        case TypeDevice::Ssd :
-        {
-            f.insertdevice(std::make_shared<Ssd>(name,size,sw));
-            break;
-        }
+    }
+    else
+    {
+        goto loop;
     }
 }
 
 
-//using p=std::make_pair<std::string , filecommand>;
+
+
+
+//using p=std::make_pair<std::string , filecommand>; // why does't work
 
 
 int main()
@@ -66,8 +78,8 @@ int main()
     {
     std::make_pair<std::string , filecommand>("adddevice" ,filecommand::adddevice),
     std::make_pair<std::string , filecommand>("insertdevice" ,filecommand::adddevice),
-    std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice),
-    std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice),
+    std::make_pair<std::string , filecommand>("removedevice" ,filecommand::removedevice),
+    std::make_pair<std::string , filecommand>("ejectdevice" ,filecommand::removedevice),
     std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice),
     std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice),
     std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice)
@@ -118,8 +130,18 @@ int main()
             switch (found->second)
             {
             case filecommand::adddevice:
-                switchonTypeDevice(manger);
-                goto loop;
+                {
+                    switchonTypeDevice(manger);
+                    goto loop;
+                }
+            case filecommand::removedevice:
+                {
+                    std::cerr << "please type name your device(Be careful you are removing Device!";
+                    std::string rmd;
+                    std::cin >> rmd;
+                    manger.removedevice(rmd);
+                    goto loop;
+                }
             default:
                 break;
             }

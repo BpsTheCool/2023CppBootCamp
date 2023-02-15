@@ -12,7 +12,8 @@ class Filemanger
 public:
     Filemanger(std::vector<std::shared_ptr<Device>>& d);
     void show() const;
-    std::shared_ptr<Device> insertdevice(std::shared_ptr<Device> newone);
+    void insertdevice(std::shared_ptr<Device> newone);
+    void removedevice(std::string namedevice);
 };
 
 #endif // FILEMANGER_H

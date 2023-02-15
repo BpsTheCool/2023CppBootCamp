@@ -36,8 +36,31 @@ void Filemanger::show() const
 
 }
 
-std::shared_ptr<Device> Filemanger::insertdevice(std::shared_ptr<Device> newone)
+void Filemanger::insertdevice(std::shared_ptr<Device> newone)
 {
     m_device.push_back(newone);
     newone->insert();
+}
+
+void Filemanger::removedevice(std::string namedevice)
+{
+    bool flag=false;
+    for (auto it=m_device.begin() ; it !=m_device.end() ; )
+    {
+        if(namedevice == (*it)->namedevice())
+        {
+            std::cerr << "it works" << std::endl;
+            m_device.erase(it);
+            flag=true;
+            break; // how this part works?
+        }
+        else
+        {
+            ++it;
+        }
+    }
+    if(flag==false)
+    {
+    std::cerr << "we could't find Device with this name";
+    }
 }

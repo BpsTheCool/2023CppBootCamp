@@ -20,9 +20,9 @@ TypeDevice Device::mymap(std::string x)
             return item.first;
         }
     }
-
     std::cerr << "I don't know the type of this Device , please insert valid devic"<<std::endl;
     std::cerr << "valid Device:'Hdd','Ssd','Flashmemory','HardExternal'"<<std::endl;
+    return TypeDevice::null;
 }
 
 std::string Device::mymap() const
