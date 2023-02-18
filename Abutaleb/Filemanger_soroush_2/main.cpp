@@ -13,14 +13,21 @@ enum class filecommand
 {
     adddevice,
     removedevice,
+    selectdevice,
+    renamedevie
 };
 
 std::string user()
 {
     std::cerr << std::endl << "************************************************"<<std::endl;
     std::cerr << "command: ";
-    std::cerr << "adddevice/insertdevice ";
-    std::cerr << "removedevice/ejectdevice ";
+    std::cerr << "adddevice/ind ";
+    std::cerr << "removedevice/ejd ";
+    std::cerr << "renamedevice/red ";
+    std::cerr << "selectdevice/sld " << std::endl;
+    std::cerr << "addderive/add ";
+    std::cerr << "removederive/ejc ";
+    std::cerr << "selectderive/slde " << std::endl;
     std::string s;
     std::cerr << std::endl;
     std::cin >> s;
@@ -77,12 +84,13 @@ int main()
     std::unordered_map<std::string , filecommand> o_map
     {
     std::make_pair<std::string , filecommand>("adddevice" ,filecommand::adddevice),
-    std::make_pair<std::string , filecommand>("insertdevice" ,filecommand::adddevice),
+    std::make_pair<std::string , filecommand>("ind" ,filecommand::adddevice),
     std::make_pair<std::string , filecommand>("removedevice" ,filecommand::removedevice),
-    std::make_pair<std::string , filecommand>("ejectdevice" ,filecommand::removedevice),
-    std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice),
-    std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice),
-    std::make_pair<std::string , filecommand>("test" ,filecommand::adddevice)
+    std::make_pair<std::string , filecommand>("ejd" ,filecommand::removedevice),
+    std::make_pair<std::string , filecommand>("selectdevice" ,filecommand::selectdevice),
+    std::make_pair<std::string , filecommand>("sld" ,filecommand::selectdevice),
+    std::make_pair<std::string , filecommand>("renamedevice" ,filecommand::renamedevie),
+    std::make_pair<std::string , filecommand>("red" ,filecommand::renamedevie),
     };
 
     std::vector<std::shared_ptr<Device>> devices;
@@ -117,9 +125,9 @@ int main()
             goto loopstarter;
         }
         Filemanger manger(devices);
+        manger.show();
 
     loop:
-        manger.show();
         std::string yourcomment= user();
         auto found=o_map.find(yourcomment);
 
@@ -132,16 +140,37 @@ int main()
             case filecommand::adddevice:
                 {
                     switchonTypeDevice(manger);
+                    manger.show();
                     goto loop;
                 }
             case filecommand::removedevice:
                 {
-                    std::cerr << "please type name your device(Be careful you are removing Device!";
+                    std::cerr << "please type name your device(Be careful you are removing Device!)"<<std::endl;
                     std::string rmd;
                     std::cin >> rmd;
                     manger.removedevice(rmd);
+                    manger.show();
                     goto loop;
                 }
+            case filecommand::renamedevie:
+            {
+                std::cerr << "please type name your device(Be careful you are removing Device!"<<std::endl;
+                std::string rmd;
+                std::cin >> rmd;
+                manger.renamedevice(rmd);
+                manger.show();
+                goto loop;
+            }
+            case filecommand::selectdevice:
+            {
+                std::cerr << "please type name your device"<<std::endl;
+                std::string rmd;
+                std::cin >> rmd;
+                auto i = manger.selectDevice(rmd);
+                manger.showdrives(i);
+
+                goto loop;
+            }
             default:
                 break;
             }

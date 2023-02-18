@@ -10,7 +10,8 @@ Filemanger.h Filemanger.cpp
 Device.h Device.cpp
 Iplugable.h Iplugable.cpp
 Hdd.h Hdd.cpp
-Ssd.h Ssd.cpp)
+Ssd.h Ssd.cpp
+Drive.h Drive.cpp)
 
 install(TARGETS Filemanger_05
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

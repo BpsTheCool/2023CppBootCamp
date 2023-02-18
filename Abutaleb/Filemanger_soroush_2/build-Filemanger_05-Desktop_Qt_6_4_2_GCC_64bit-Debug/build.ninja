@@ -85,6 +85,12 @@ build CMakeFiles/Filemanger_05.dir/Ssd.cpp.o: CXX_COMPILER__Filemanger_05_Debug 
   OBJECT_DIR = CMakeFiles/Filemanger_05.dir
   OBJECT_FILE_DIR = CMakeFiles/Filemanger_05.dir
 
+build CMakeFiles/Filemanger_05.dir/Drive.cpp.o: CXX_COMPILER__Filemanger_05_Debug /home/soroushabt/Filemanger_05/Drive.cpp || cmake_object_order_depends_target_Filemanger_05
+  DEP_FILE = CMakeFiles/Filemanger_05.dir/Drive.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/Filemanger_05.dir
+  OBJECT_FILE_DIR = CMakeFiles/Filemanger_05.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Filemanger_05
@@ -93,7 +99,7 @@ build CMakeFiles/Filemanger_05.dir/Ssd.cpp.o: CXX_COMPILER__Filemanger_05_Debug 
 #############################################
 # Link the executable Filemanger_05
 
-build Filemanger_05: CXX_EXECUTABLE_LINKER__Filemanger_05_Debug CMakeFiles/Filemanger_05.dir/main.cpp.o CMakeFiles/Filemanger_05.dir/Filemanger.cpp.o CMakeFiles/Filemanger_05.dir/Device.cpp.o CMakeFiles/Filemanger_05.dir/Iplugable.cpp.o CMakeFiles/Filemanger_05.dir/Hdd.cpp.o CMakeFiles/Filemanger_05.dir/Ssd.cpp.o
+build Filemanger_05: CXX_EXECUTABLE_LINKER__Filemanger_05_Debug CMakeFiles/Filemanger_05.dir/main.cpp.o CMakeFiles/Filemanger_05.dir/Filemanger.cpp.o CMakeFiles/Filemanger_05.dir/Device.cpp.o CMakeFiles/Filemanger_05.dir/Iplugable.cpp.o CMakeFiles/Filemanger_05.dir/Hdd.cpp.o CMakeFiles/Filemanger_05.dir/Ssd.cpp.o CMakeFiles/Filemanger_05.dir/Drive.cpp.o
   FLAGS = -DQT_QML_DEBUG -g
   OBJECT_DIR = CMakeFiles/Filemanger_05.dir
   POST_BUILD = :

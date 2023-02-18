@@ -1,5 +1,6 @@
 #include "Device.h"
 #include <iostream>
+#include"Drive.h"
 
 //Device::Device()
 //{
@@ -39,10 +40,21 @@ std::string Device::mymap() const
         }
 }
 
+std::vector<std::shared_ptr<Drive> > Device::drives() const
+{
+    return m_drives;
+}
+
+void Device::setNamedevice(const std::string &newNamedevice)
+{
+    m_namedevice = newNamedevice;
+}
+
 Device::Device(std::string name,  int size, const TypeDevice type )
     :m_namedevice(name)  ,  m_sizedevice(size),  m_typedevice(type)
 {
-
+    m_defualtDrive = std::make_shared<Drive>("Main Drive" , size);
+    m_drives.push_back(m_defualtDrive);
 }
 
 

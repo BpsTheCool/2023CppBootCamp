@@ -3,7 +3,11 @@
 
 #include <string>
 #include <unordered_map>
+#include<memory>
+#include<vector>
 #include "Iplugable.h"
+
+class Drive;
 
 
 enum class TypeDevice
@@ -21,6 +25,8 @@ class Device : public Iplugable
     std::string m_namedevice;
     const TypeDevice m_typedevice;
     int m_sizedevice;
+    std::shared_ptr<Drive> m_defualtDrive;
+    std::vector<std::shared_ptr<Drive>> m_drives;
     static inline std::unordered_map<TypeDevice,std::string> m_typenames
     {
         std::make_pair<TypeDevice,std::string>(TypeDevice::Hdd , "Hdd"),
@@ -31,17 +37,19 @@ class Device : public Iplugable
 
 public:
     Device()=delete;
-    Device(std::string name , int size , const TypeDevice type);
+    Device(std::string name , int size, const TypeDevice type);
     std::string namedevice() const;
     int sizedevice() const;
+    std::vector<std::shared_ptr<Drive>> drives() const;
     TypeDevice typedevice() const;
-    static TypeDevice mymap(std::string x) ;
+    static TypeDevice mymap(std::string x);
     std::string mymap() const;
 
     virtual void insert()=0;
     virtual void eject()=0;
 
 
+    void setNamedevice(const std::string &newNamedevice);
 };
 
 #endif // DEVICE_H
