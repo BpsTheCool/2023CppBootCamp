@@ -1,7 +1,5 @@
 #ifndef SMARTPOINTER_H
 #define SMARTPOINTER_H
-#include <set>
-#include <QDebug>
 
 template<typename T>
 class shared_pointer
