@@ -1,104 +1,137 @@
 #include "smartpointer.h"
 
-int &shared_pointer::operator *(){
-    return *m_object;
-}
-
-std::set<shared_pointer *> *shared_pointer::getSet(){
-    return m_set;
-}
-
 shared_pointer::shared_pointer():
-    m_object(nullptr)
-  ,m_set(nullptr)
+    m_object(nullptr),
+    m_counter(nullptr)
 {
-
 }
 
-shared_pointer::shared_pointer(int *new_ptr)
-    :m_object(new_ptr),
-      m_set(new std::set<shared_pointer*>)
+shared_pointer::shared_pointer(int *new_ptr):
+    m_object(new_ptr),
+    m_counter(new int(1))
 {
-        m_set->insert(this);
 }
 
 shared_pointer::shared_pointer(shared_pointer &copy)
-    :m_object(copy.getobject())
-    ,m_set(copy.getSet())
+    :m_object(copy.getObject())
+    ,m_counter(copy.getCounter())
 {
-    m_set->insert(this);
+    *m_counter+=1;
 }
 
 shared_pointer::shared_pointer(shared_pointer &&moved)
-    :m_object(moved.getobject())
-    ,m_set(moved.getSet())
+    :m_object(moved.getObject())
+    ,m_counter(moved.getCounter())
 {
-    m_set->insert(this);
-    m_set->erase(&moved);
+    *m_counter+=1;
+    moved.setNull();
 }
 
-int shared_pointer::countPointers(){
-    return m_set->size();
-}
-
-shared_pointer::~shared_pointer(){
-    if(m_set){
-        if(m_set->size()==1){
+void shared_pointer::operator = (int *new_ptr)
+{
+    if(m_counter != nullptr){
+        if(*m_counter==1){
             delete m_object;
+            delete m_counter;
+        } else {
+            *m_counter-=1;
         }
-        m_set->erase(this);
+    }
+    m_object = new_ptr;
+    m_counter = new int(1);
+}
+
+void shared_pointer::operator = (shared_pointer &copy)
+{
+    if(m_object==copy.getObject()){
+        return;
+    } else {
+        if(m_object != nullptr){
+            if(*m_counter==1){
+                delete m_object;
+                delete m_counter;
+            } else {
+                *m_counter-=1;
+            }
+        }
+        m_object = copy.getObject();
+        m_counter = copy.getCounter();
+        *m_counter+=1;
     }
 }
 
-int *shared_pointer::getobject(){
+void shared_pointer::operator = (shared_pointer &&moved)
+{
+    if(moved.getObject()==m_object){
+        moved.setNull();
+    } else {
+        if(m_object != nullptr){
+            if(*m_counter==1){
+                delete m_object;
+                delete m_counter;
+            } else {
+                *m_counter=-1;
+            }
+        }
+        m_object = moved.getObject();
+        m_counter=moved.getCounter();
+        *m_counter+=1;
+        moved.setNull();
+    }
+}
+
+void shared_pointer::reset(int *new_ptr)
+{
+    if(m_counter != nullptr){
+        if(*m_counter==1){
+            delete m_object;
+            delete m_counter;
+        } else {
+            *m_counter-=1;
+        }
+    }
+    m_object = new_ptr;
+    m_counter = new int(1);
+}
+
+int &shared_pointer::operator *()
+{
+    return *m_object;
+}
+
+int* shared_pointer::getObject()
+{
     return m_object;
 }
 
-void shared_pointer::operator =(shared_pointer &&moved)
+int* shared_pointer::getCounter()
 {
-    if(moved.getSet()==getSet()){
-        m_set->erase(&moved);
-    } else {
-        m_object = moved.getobject();
-        if(m_set){
-            if(m_set->size()==1){
-                delete m_object;
-            }
-            m_set->erase(this);
-        }
-        m_set=moved.getSet();
-        m_set->insert(this);
-        m_set->erase(&moved);
-    }
+    return m_counter;
 }
 
-void shared_pointer::operator =(shared_pointer &copy)
+void shared_pointer::setNull()
 {
-    if(copy.getSet()==getSet()){
-        return;
-    } else {
-        if(m_set){
-            if(m_set->size()==1){
-                delete m_object;
-            }
-            m_set->erase(this);
-        }
-        m_object = copy.getobject();
-        m_set=copy.getSet();
-        m_set->insert(this);
-    }
-
-}
-
-void shared_pointer::operator =(int *new_ptr)
-{
-    if(m_set){
-        if(m_set->size()==1){
+    if(m_object!=nullptr){
+        *m_counter-=1;
+        if(*m_counter==0){
             delete m_object;
+            delete m_counter;
         }
-        m_set->erase(this);
+        m_counter=nullptr;
+        m_object=nullptr;
     }
-    m_object = new_ptr;
-    m_set=new std::set<shared_pointer*>;
-    m_set->insert(this);
+}
+
+int shared_pointer::countPointers(){
+    return *m_counter;
+}
+
+shared_pointer::~shared_pointer(){
+    if(m_object!=nullptr){
+        *m_counter-=1;
+        if(*m_counter==0){
+            delete m_object;
+            delete m_counter;
+        }
+    }
 }

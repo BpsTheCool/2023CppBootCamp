@@ -1,0 +1,7 @@
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/Filemanger_05.dir
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/install.dir
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/install/local.dir
+/home/soroushabt/Filemanger_05/build-Filemanger_05-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/install/strip.dir
