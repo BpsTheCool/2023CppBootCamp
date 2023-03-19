@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug",
-		"source" : "/home/soroushabt/Shared_ptr2"
+		"build" : "/home/soroushabt/2023CppBootCamp/Abutaleb/sharedptr_soroush_2/build-sharedptr_soroush_2-Desktop_Qt_6_4_2_GCC_64bit-Debug",
+		"source" : "/home/soroushabt/2023CppBootCamp/Abutaleb/sharedptr_soroush_2"
 	},
 	"version" : 
 	{
