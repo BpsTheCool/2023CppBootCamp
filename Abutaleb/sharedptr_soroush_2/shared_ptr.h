@@ -16,6 +16,7 @@ public:
 
     Shared_ptr(Shared_ptr& copy)
     {
+        smartpoiter=copy.smartpoiter;
         m_counter = copy.m_counter;
         (*m_counter)++;
     };
