@@ -6,7 +6,6 @@ int main()
 {
     shared_pointer a1 = new int(4);
     shared_pointer a2 = std::move(a1);
-//    shared_pointer a3 = a1;   error:a1 has been moved
     shared_pointer a3 = a2;
 {
     shared_pointer a4 = a3;
@@ -18,8 +17,10 @@ int main()
     qInfo()<< "a3: " <<*a3 ;
     qInfo()<< "count pointers (a): " <<a3.countPointers();
 
+
     shared_pointer b1;
-    b1 = new int(512);
+//    b1 = new int(512);
+    b1.reset(new int (512));
     shared_pointer b2;
     b2=b1;
     shared_pointer b3;
@@ -32,5 +33,4 @@ int main()
     qInfo()<< "b4: " <<*b4;
     qInfo()<< "count pointers (b): " <<b2.countPointers();
     qInfo()<< "count pointers (a): " <<a3.countPointers();
-
 }

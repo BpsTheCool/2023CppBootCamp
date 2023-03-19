@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/TemplateSharePtr.dir/TemplateSharePtr_autogen/mocs_compilation.cpp.o CMakeFiles/TemplateSharePtr.dir/main.cpp.o -o TemplateSharePtr  -Wl,-rpath,/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib /home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 
