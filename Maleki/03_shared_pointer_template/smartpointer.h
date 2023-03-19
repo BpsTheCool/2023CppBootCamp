@@ -22,37 +22,23 @@ public:
     };
 
     shared_pointer(shared_pointer &copy):
-        m_object(copy.getObject())
-        ,m_counter(copy.getCounter())
+        m_object(copy.m_object)
+        ,m_counter(copy.m_counter)
     {
         *m_counter+=1;
     };
 
     shared_pointer(shared_pointer &&moved):
-        m_object(moved.getObject())
-        ,m_counter(moved.getCounter())
+        m_object(moved.m_object)
+        ,m_counter(moved.m_counter)
     {
         *m_counter+=1;
         moved.setNull();
     };
 
-    void operator = (T* new_ptr)
-    {
-        if(m_counter != nullptr){
-            if(*m_counter==1){
-                delete m_object;
-                delete m_counter;
-            } else {
-                *m_counter-=1;
-            }
-        }
-        m_object = new_ptr;
-        m_counter = new int(1);
-    };
-
     void operator = (shared_pointer &copy)
     {
-        if(m_object==copy.getObject()){
+        if(m_object==copy.m_object){
             return;
         } else {
             if(m_object != nullptr){
@@ -63,15 +49,15 @@ public:
                     *m_counter-=1;
                 }
             }
-            m_object = copy.getObject();
-            m_counter = copy.getCounter();
+            m_object = copy.m_object;
+            m_counter = copy.m_counter;
             *m_counter+=1;
         }
     };
 
     void operator = (shared_pointer &&moved)
     {
-        if(moved.getObject()==m_object){
+        if(moved.m_object==m_object){
             moved.setNull();
         } else {
             if(m_object != nullptr){
@@ -82,14 +68,15 @@ public:
                     *m_counter=-1;
                 }
             }
-            m_object = moved.getObject();
-            m_counter=moved.getCounter();
+            m_object = moved.m_object;
+            m_counter=moved.m_counter;
             *m_counter+=1;
             moved.setNull();
         }
     };
 
-    void reset(T* new_ptr){
+    void reset(T* new_ptr)
+    {
         if(m_counter != nullptr){
             if(*m_counter==1){
                 delete m_object;
@@ -112,11 +99,8 @@ public:
         return m_object;
     };
 
-    int* getCounter(){
-        return m_counter;
-    };
-
-    void setNull(){
+    void setNull()
+    {
         if(m_object!=nullptr){
             *m_counter-=1;
             if(*m_counter==0){
@@ -128,11 +112,13 @@ public:
         }
     };
 
-    int countPointers(){
+    int countPointers()
+    {
         return *m_counter;
     };
 
-    ~shared_pointer(){
+    ~shared_pointer()
+    {
         if(m_object!=nullptr){
             *m_counter-=1;
             if(*m_counter==0){
