@@ -15,10 +15,26 @@ public:
                         m_counter=num.m_counter;
                        (*m_counter)++;}
 
-    Sh_Ptr(Sh_Ptr &&num){num.m_counter=m_counter;}
+    Sh_Ptr(Sh_Ptr &&num){m_ptr=num.m_ptr;
+                        num.m_ptr=nullptr;
+                        }
     ~Sh_Ptr(){(*m_counter)--;
               if (*m_counter==0) std::cerr<< std::string{"\n0\n"};
-             delete m_ptr;}
+              delete m_ptr;
+              delete m_counter;}
+    T* operator->() const {
+      return m_ptr;
+    }
+    T& operator*() const {
+      return *m_ptr;
+    }
+
+    void operator=(Sh_Ptr &num){m_ptr=num.m_ptr;
+    m_counter=num.m_counter;
+   (*m_counter)++;}
+
+    void reset(){m_ptr=nullptr;}
+
 
     int counter(){return *m_counter;}
 };
