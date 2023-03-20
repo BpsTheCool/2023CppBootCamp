@@ -1,0 +1,4 @@
+/home/nasim/Desktop/2023CppBootCamp/Heidari/3/build-TemplateSharePtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/TemplateSharePtr.dir
+/home/nasim/Desktop/2023CppBootCamp/Heidari/3/build-TemplateSharePtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/nasim/Desktop/2023CppBootCamp/Heidari/3/build-TemplateSharePtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/nasim/Desktop/2023CppBootCamp/Heidari/3/build-TemplateSharePtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/TemplateSharePtr_autogen.dir
