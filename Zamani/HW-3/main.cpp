@@ -9,6 +9,25 @@ private:
     T *m_ptr = nullptr;
     int *ref_count = nullptr;
 
+    void increment_ref_count()
+    {
+        (*ref_count)++;
+    }
+
+    void decrement_ref_count()
+    {
+        (*ref_count)--;
+    }
+    void set_ref_count(int newRef_count)
+    {
+        (*ref_count) = newRef_count;
+    }
+
+    void reset()
+    {
+        *ref_count = 0;
+    }
+
 public:
 
     my_shared_ptr(T* ptr)
@@ -33,14 +52,14 @@ public:
     my_shared_ptr(my_shared_ptr& tocopy)
     {
         tocopy.increment_ref_count();
-        ref_count = tocopy.get_ref_count();
+        ref_count = tocopy.ref_count;
         m_ptr = tocopy.ptr();
     }
 
     my_shared_ptr(my_shared_ptr &&tomove)
     {
         m_ptr = std::move(tomove.ptr());
-        ref_count = std::move(tomove.get_ref_count());
+        ref_count = std::move(tomove.ref_count);
         tomove.m_ptr = nullptr;
         tomove.ref_count = nullptr;
     }
@@ -55,7 +74,7 @@ public:
         if(this == &ptr)
                return;
         ptr.increment_ref_count();
-        ref_count = ptr.get_ref_count();
+        ref_count = ptr.ref_count;
         this->m_ptr = ptr.ptr();
 
     }
@@ -67,28 +86,14 @@ public:
         return m_ptr;
     }
 
-    int *get_ref_count() const
-    {
-        return ref_count;
-    }
-
     int show_Ref_count()
     {
         return *ref_count;
     }
 
-    void increment_ref_count()
+    T operator->() const
     {
-        (*ref_count)++;
-    }
-
-    void decrement_ref_count()
-    {
-        (*ref_count)--;
-    }
-    void set_ref_count(int newRef_count)
-    {
-        (*ref_count) = newRef_count;
+        return m_ptr;
     }
 
 
@@ -108,7 +113,7 @@ int main(int argc, char *argv[])
     my_shared_ptr<int> c_ptr(new int(111));
     c_ptr = b_ptr;
     std::cerr << "a refcount is: " <<a_ptr.show_Ref_count() << std::endl ;
-    my_shared_ptr m_ptr(std::move(a_ptr));
+    my_shared_ptr<int>  m_ptr(std::move(a_ptr));
     std::cerr << "a refcount is: " <<m_ptr.show_Ref_count() << std::endl ;
     my_shared_ptr<double> d_ptr(new double (12.987));
     std::cerr << "a is pointing to value: " << *m_ptr << std::endl ;
@@ -139,6 +144,7 @@ int main(int argc, char *argv[])
     std::cerr << "g refcount is: "<< g_ptr.show_Ref_count() << std::endl ;
     std::cerr << "g is pointing to value: " << *g_ptr << std::endl ;
     std::cerr << "g address is: " << g_ptr.ptr() << std::endl ;
+
 
 
     return 0;
