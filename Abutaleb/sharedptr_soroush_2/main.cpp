@@ -1,42 +1,43 @@
 #include <iostream>
 #include"shared_ptr.h"
+#include<memory>
 
 class A
 {
+public:
+    A(){};
+    void test()
+    {
 
+    }
 };
 
 int main()
 {
+    std::shared_ptr<A> test;
+    test->test();
+    int* g=new int (8);
+    Shared_ptr<int> a(g);
+    auto b =a;
+    std::cerr << b.use_count();
+    std::cerr << a.use_count();
+    std::cerr << *b;
 
-    //just for testing , test everything you want and please share your Idea about my problems
+//    A l;
+    Shared_ptr<A> soroush(new A());
+    soroush->test();
+    std::cerr << soroush.use_count();
 
-//    Shared_ptr<int> c(new int(5));
-//    Shared_ptr<int> g(c);
-
-//    {
-//    Shared_ptr<int> d(c);
-//    std::cerr << d.use_count();
-//    }
-
-//    std::cerr << c.use_count();
-//    std::cerr << g.use_count();
-
-
-//    std::cerr << std::endl;
-
-//    Shared_ptr<double> m(new double(23.236));
-//    auto f = m;
-
-//    std::cerr<<m.use_count();
-//    std::cerr<<f.use_count();
-
-//    std::cerr << std::endl;
-
-//    Shared_ptr<A> l(new A);
-//    std::cerr<<l.use_count();
-
-
+    soroush.reset();
+    int* sg;
+    if(soroush==sg)
+    {
+        std::cerr << "it works" << std::endl;
+    }
+    else
+    {
+        std::cerr << "it dosen't work" << std::endl;
+    }
 
     return 0;
 }

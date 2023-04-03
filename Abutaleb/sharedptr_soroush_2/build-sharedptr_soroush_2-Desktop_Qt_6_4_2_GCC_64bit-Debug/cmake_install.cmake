@@ -1,4 +1,4 @@
-# Install script for directory: /home/soroushabt/Shared_ptr2
+# Install script for directory: /home/soroushabt/2023CppBootCamp/Abutaleb/sharedptr_soroush_2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Shared_ptr2"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/Shared_ptr2")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/soroushabt/2023CppBootCamp/Abutaleb/sharedptr_soroush_2/build-sharedptr_soroush_2-Desktop_Qt_6_4_2_GCC_64bit-Debug/Shared_ptr2")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Shared_ptr2" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Shared_ptr2")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -66,5 +66,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/soroushabt/2023CppBootCamp/Abutaleb/sharedptr_soroush_2/build-sharedptr_soroush_2-Desktop_Qt_6_4_2_GCC_64bit-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

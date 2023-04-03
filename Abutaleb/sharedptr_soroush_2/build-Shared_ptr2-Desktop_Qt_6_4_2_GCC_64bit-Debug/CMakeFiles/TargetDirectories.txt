@@ -1,7 +1,0 @@
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/Shared_ptr2.dir
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/install.dir
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/install/local.dir
-/home/soroushabt/Shared_ptr2/build-Shared_ptr2-Desktop_Qt_6_4_2_GCC_64bit-Debug/CMakeFiles/install/strip.dir
