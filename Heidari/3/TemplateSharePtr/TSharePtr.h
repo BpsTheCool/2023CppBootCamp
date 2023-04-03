@@ -1,6 +1,7 @@
 ﻿#ifndef TSHAREPTR_H
 #define TSHAREPTR_H
 #include <iostream>
+#include "QDebug"
 
 template<typename T>
 class TSharePtr
@@ -69,6 +70,17 @@ public:
        return *this;
     }
 
+    //*****************************************************************************
+      T& operator *() const
+        {
+            return *ptrT;
+        }
+//*****************************************************************************
+
+      T* operator ->() const
+        {
+            return ptrT;
+        }
 //*****************************************************************************
     TSharePtr(TSharePtr && movedPtr)
     {
@@ -84,6 +96,7 @@ public:
     ~TSharePtr()
     {
        clean();
+       qDebug() << "tshare Destruct" ;
     }
 
 //*****************************************************************************
@@ -97,7 +110,7 @@ public:
     }
 
 //*****************************************************************************
-    int* getAddres()
+    T* getAddres()
     {
       return ptrT;
     }
@@ -108,5 +121,20 @@ public:
       return *ptrT;
     }
 
+//*****************************************************************************
+    void reset()
+    {
+      this->~TSharePtr<T>();
+        *counter = 0;
+        counter = nullptr;
+    }
+
+//*****************************************************************************
+    void reset(T *obj)
+    {
+       this->~TSharePtr<T>();
+       new (this) TSharePtr(obj);
+
+    }
 };
 #endif // TSHAREPTR_H
