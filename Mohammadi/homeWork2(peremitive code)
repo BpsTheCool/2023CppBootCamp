@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+class Myint {
+	public: 
+	int i=1;
+	int test=999;
+	int flag;
+	Myint *address;
+	Myint(){
+	
+	}
+	Myint(Myint *ref){
+		flag=1;
+	
+		address=ref;
+	
+	}
+	Myint(Myint& q){
+		
+		i=q.i+1;		
+	}
+	~Myint(){
+		i--;
+		cout <<i << endl;
+	if(i==1){
+			delete address;
+			cout<<"pak shod";
+		}
+	}
+};
+int main(){	
+	Myint *a=new Myint(a);
+
+Myint b=*a; //copycunstructor called i++;
+cout << b.i;
+{
+Myint c=*a; //copycunstructor called i++;
+
+}//destructor  of c called :i--;
+
+
+}
