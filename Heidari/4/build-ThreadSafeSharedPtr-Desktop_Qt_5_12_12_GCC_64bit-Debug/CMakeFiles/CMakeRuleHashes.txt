@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+f51779a788195565f2d47ed6efa69b0c CMakeFiles/ThreadSafeSharedPtr_autogen
