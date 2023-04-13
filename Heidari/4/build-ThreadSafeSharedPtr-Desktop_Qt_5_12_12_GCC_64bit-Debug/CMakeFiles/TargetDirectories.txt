@@ -1,0 +1,4 @@
+/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/ThreadSafeSharedPtr.dir
+/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/ThreadSafeSharedPtr_autogen.dir

@@ -1,0 +1,112 @@
+{
+	"BUILD_DIR" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/ThreadSafeSharedPtr_autogen",
+	"CMAKE_BINARY_DIR" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/ThreadSafeSharedPtr",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/ThreadSafeSharedPtr/CMakeLists.txt",
+		"/home/nasim/Qt5.12.12/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake",
+		"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/3.22.1/CMakeSystem.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake",
+		"/usr/share/cmake-3.22/Modules/Platform/Linux.cmake",
+		"/usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake",
+		"/usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake",
+		"/usr/share/cmake-3.22/Modules/Compiler/GNU.cmake",
+		"/usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake",
+		"/usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/usr/share/cmake-3.22/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/ThreadSafeSharedPtr",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/ThreadSafeSharedPtr/TSafeSharePtr.h",
+			"MU",
+			"EWIEGA46WW/moc_TSafeSharePtr.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/ThreadSafeSharedPtr_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/ThreadSafeSharedPtr_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug",
+		"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/ThreadSafeSharedPtr",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/include",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/include/QtCore",
+		"/home/nasim/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++",
+		"/usr/include/c++/11",
+		"/usr/include/x86_64-linux-gnu/c++/11",
+		"/usr/include/c++/11/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/11/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/g++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/ThreadSafeSharedPtr_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/ThreadSafeSharedPtr_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/nasim/Qt5.12.12/5.12.12/gcc_64/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 12,
+	"SETTINGS_FILE" : "/home/nasim/Desktop/2023CppBootCamp/Heidari/4/build-ThreadSafeSharedPtr-Desktop_Qt_5_12_12_GCC_64bit-Debug/CMakeFiles/ThreadSafeSharedPtr_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/nasim/Desktop/2023CppBootCamp/Heidari/4/ThreadSafeSharedPtr/main.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
